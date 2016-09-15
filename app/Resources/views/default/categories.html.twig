@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Code&Care{% endblock %}</title>
+</head>
+<body>
+<div id="content">
+    {% block body %}
+        <a href="{{ path('main_page') }}">Main page</a>
+        <div class="categories">
+            <ul>
+                <div>Categories:</div>
+                {% for category in categories %}
+                    <li>
+                        <div id="single_product">
+                            <div><a href="{{ path('categories') }}/{{ category.getName() }}" >{{ category.getName() }}</a></div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="products">
+            <ul>
+                <div>Products:</div>
+                {% for product in products %}
+                    <li>
+                        <div id="single_product">
+                            <div>{{ product.getName() }}</div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endblock %}
+</div>
+</body>
+</html>

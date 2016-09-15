@@ -12,11 +12,4 @@ AppBundle\Entity\Product:
     manyToMany:
         categories:
           targetEntity: Category
-          joinTable:
-            name: products_categories
-            joinColumns:
-              product_id:
-                referencedColumnName: id
-            inverseJoinColumns:
-              category_id:
-                referencedColumnName: id
+          mappedBy: products

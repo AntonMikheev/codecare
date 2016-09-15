@@ -1,2 +1,9 @@
-app:
-    resource: '@AppBundle/Resources/config/routing.yml'
+main_page:
+    path: /
+    defaults: { _controller: AppBundle:Index:index }
+categories:
+    path: /categories
+    defaults: { _controller: AppBundle:Index:categoriesPage}
+products_by_categories:
+    path: /categories/{categoryName}
+    defaults: { _controller: AppBundle:Index:categoriesPage}

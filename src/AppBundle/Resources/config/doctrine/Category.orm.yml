@@ -12,4 +12,12 @@ AppBundle\Entity\Category:
     manyToMany:
         products:
           targetEntity: Product
-          mappedBy: categories
+          joinTable:
+            name: products_categories
+            joinColumns:
+              category_id:
+                referencedColumnName: id
+            inverseJoinColumns:
+              product_id:
+                referencedColumnName: id
+          cascade: ["persist"]
